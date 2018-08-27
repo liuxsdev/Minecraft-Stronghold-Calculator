@@ -32,12 +32,15 @@
                         <v-container>
                             <v-layout row wrap id="points">
                                 <v-flex xs12 sm12 class="point" v-for="item in items" :key="item">
-                                    <v-text-field prefix="P：" @change="test"></v-text-field>
+                                    <v-text-field prefix="P：" @change="test" clearable clear-icon="mdi-delete"></v-text-field>
                                 </v-flex>
                                 <v-flex xs12 sm10>
                                     <v-text-field v-model="result" label="计算结果：" readonly></v-text-field>
                                 </v-flex>
-                                <v-flex xs12 sm2>
+                                <v-flex xs12 sm1>
+                                    <v-btn id="btnadd" v-on:click="clearAll" color="info">清除所有</v-btn>
+                                </v-flex>
+                                <v-flex xs12 sm1>
                                     <v-btn id="btnadd" v-on:click="addP" color="info">添加新点</v-btn>
                                 </v-flex>
                             </v-layout>
@@ -67,7 +70,12 @@
                     this.result = "X = " + result.x.toFixed(3) + "    Z = " + result.y.toFixed(3) + "    误差：" + result.r.toFixed(3)
                 } catch (err) {
                     this.result = ""
+
                 }
+            },
+            clearAll:function(){
+                this.items=[1,2]
+                //clearPoints()
             }
         },
         computed: {
@@ -79,7 +87,6 @@
         }
     })
 
-    // input事件不对，想想其他方法，要不然直接用按钮了
     function getPoints() {
         a = document.querySelectorAll(".point input")
         p = []
@@ -92,6 +99,13 @@
                 return { "x": item[0], "y": item[1], "theta": item[2] }
             })
         return pl
+    }
+    function clearPoints(){
+        //有问题
+        a = document.querySelectorAll(".point input")
+        a[0]._value=""
+        a[0].value=""
+        a[1].value=""
     }
     </script>
 </body>

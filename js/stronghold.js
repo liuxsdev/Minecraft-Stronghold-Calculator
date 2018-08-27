@@ -1,9 +1,9 @@
 
 
-p1={'x':100,'y':100,'theta':40}
-p2={'x':120,'y':110,'theta':50}
-p3={'x':130,'y':120,'theta':60}
-p4={'x':140,'y':130,'theta':70}
+// p1={'x':100,'y':100,'theta':40}
+// p2={'x':120,'y':110,'theta':50}
+// p3={'x':130,'y':120,'theta':60}
+// p4={'x':140,'y':130,'theta':70}
 
 //The final result is:   x=41.897,z=175.536   r=23.290
 //
@@ -92,20 +92,6 @@ function StrongholdFind(PontList){
 
 }
 
-
-
-
-// var array = [p1,p2,p3,p4];
-// cp=[]
-// for(var i = 0, len1 = array.length; i < len1; i++) {
-//  var a2 = array.concat();
-//  a2.splice(0, i + 1);
-//  for(var j = 0, len2 = a2.length; j < len2; j++) {
-//         cp.push(calc(array[i],a2[j]))
-//  }
-// }
-// console.log(cp)
-// console.log(minCircle(cp))
 
 
 
